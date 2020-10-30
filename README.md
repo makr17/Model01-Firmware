@@ -1,6 +1,16 @@
 # Keyboardio Model 01 Firmware
 
-_The default firmware for the Keyboardio Model 01_
+_My fork of the default firmware for the Keyboardio Model 01_
+
+## Changes and Additions
+
+* Default keymap to dvorak
+* Turn off most of the LED effects (that I don't use)
+* Configure [OneShot](https://kaleidoscope.readthedocs.io/en/latest/plugins/OneShot.html) for all modifier keys and the function keys
+* Setup [LED-ActiveModColor](https://kaleidoscope.readthedocs.io/en/latest/plugins/LED-ActiveModColor.html) to highlight the active Mod/Function keys
+* Setup [TapDance](https://kaleidoscope.readthedocs.io/en/latest/plugins/TapDance.html) to provide curly and square braces on the main layer (using LED and Any keys).  Move LED and Any to the Function layer.
+
+---
 
 <h3>This is a quick start guide for folks who are familiar with Arduino and prefer to use the command line. For everyone else:
 
