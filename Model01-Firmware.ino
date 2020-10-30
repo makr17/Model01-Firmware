@@ -430,6 +430,16 @@ USE_MAGIC_COMBOS({.action = toggleKeyboardProtocol,
   .keys = { R3C6, R0C0, R0C6 }
 });
 
+void tapDanceAction(uint8_t tap_dance_index, KeyAddr key_addr, uint8_t tap_count,
+                    kaleidoscope::plugin::TapDance::ActionType tap_dance_action) {
+  switch (tap_dance_index) {
+  case 0:
+    return tapDanceActionKeys(tap_count, tap_dance_action, Key_LeftCurlyBracket, Key_LeftBracket);
+  case 1:
+    return tapDanceActionKeys(tap_count, tap_dance_action, Key_RightCurlyBracket, Key_RightBracket);
+  }
+}
+
 // First, tell Kaleidoscope which plugins you want to use.
 // The order can be important. For example, LED effects are
 // added in the order they're listed here.
@@ -529,18 +539,6 @@ KALEIDOSCOPE_INIT_PLUGINS(
   // by BIOSes) and Report (NKRO).
   USBQuirks
 );
-
-void tapDanceAction(uint8_t tap_dance_index, byte row, byte col, uint8_t tap_count,
-                    kaleidoscope::plugin::TapDance::ActionType tap_dance_action) {
-  switch (tap_dance_index) {
-  case 0:
-    return tapDanceActionKeys(tap_count, tap_dance_action,
-                              Key_LeftCurlyBracket, Key_LeftBracket);
-  case 1:
-    return tapDanceActionKeys(tap_count, tap_dance_action,
-                              Key_RightCurlyBracket, Key_RightBracket);         
-  }
-}
 
 /** The 'setup' function is one of the two standard Arduino sketch functions.
  * It's called when your keyboard first powers up. This is where you set up
